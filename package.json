@@ -1,0 +1,44 @@
+{
+  "name": "@uniformdev/examples-optimize-contentful-nuxt",
+  "version": "0.10.0",
+  "private": true,
+  "license": "Apache-2.0",
+  "scripts": {
+    "build": "run-s generate:intents build:nuxt",
+    "build:nuxt": "nuxt build",
+    "ci": "run-s generate:intents export",
+    "dev": "run-s generate:intents dev:nuxt",
+    "dev:nuxt": "nuxt",
+    "export": "cross-env NUXT_BUILD_TARGET=static nuxt generate",
+    "generate:intents": "uniform optimize manifest download --output ./modules/uniform/optimize/intentManifest.json --apiKey $UNIFORM_API_KEY",
+    "start": "nuxt start",
+    "test:e2e": "cypress open"
+  },
+  "dependencies": {
+    "@analytics/google-analytics": "^0.5.2",
+    "@analytics/segment": "^0.5.0",
+    "@contentful/rich-text-html-renderer": "^14.1.2",
+    "@nuxtjs/pwa": "^3.0.2",
+    "@uniformdev/optimize-tracker-analytics": "canary",
+    "@uniformdev/optimize-tracker-browser": "canary",
+    "@uniformdev/optimize-tracker-contentful": "canary",
+    "@uniformdev/optimize-tracker-vue": "canary",
+    "analytics": "^0.5.5",
+    "contentful": "^7.14.8",
+    "cookie-universal-nuxt": "^2.1.4",
+    "nuxt": "2.14.8"
+  },
+  "devDependencies": {
+    "@nuxtjs/eslint-config": "^3.1.0",
+    "@nuxtjs/eslint-module": "^2.0.0",
+    "@nuxtjs/tailwindcss": "^3.1.0",
+    "@uniformdev/cli": "canary",
+    "babel-eslint": "^10.1.0",
+    "cross-env": "^7.0.2",
+    "eslint-plugin-nuxt": "^1.0.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.1.2"
+  }
+}
+

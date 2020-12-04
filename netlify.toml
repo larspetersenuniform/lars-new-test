@@ -1,0 +1,22 @@
+[build]
+  command = 'npm run ci'
+  publish = 'out'
+
+[template]
+  incoming-hooks = ["Uniform"]
+
+[template.environment]
+  CONTENTFUL_SPACE_ID = 'Contentful Space ID'
+  CONTENTFUL_ENVIRONMENT = 'Contentful Environment'
+  CONTENTFUL_CDA_ACCESS_TOKEN = 'Contentful Delivery API Key'
+  CONTENTFUL_CPA_ACCESS_TOKEN = 'Contentful Preview API Key'
+  UNIFORM_API_KEY='Uniform Optimize API Key'
+  GA_UA_ID='Google Analytics ID (optional)'
+
+# Stores the nuxt cache between builds for faster build time
+[[plugins]]
+  package = "netlify-plugin-cache-nuxt"
+
+
+[build.environment]
+  UNIFORM_CLI_BASE_URL='https://uniformapp-dev.s3.amazonaws.com/optimize/'
